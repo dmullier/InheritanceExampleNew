@@ -6,17 +6,17 @@ namespace InheritanceExample
     public partial class Form1 : Form
     {
 
-        ArrayList circles = new ArrayList();
-        ArrayList rectangles = new ArrayList();
+        ArrayList shapes = new ArrayList();
+       
         public Form1()
         {
             InitializeComponent();
 
             //add a few shapes
-            circles.Add(new Circle(Color.Purple, 10, 100, 100)); //create a red circle at (10,100) of radius 100
-            circles.Add(new Circle(Color.Chartreuse, 100, 10, 50)); //apparently it's green
-            rectangles.Add(new Rect(Color.Blue, 150, 150, 50, 100));
-            circles.Add(new Circle(Color.Red, 10, 100, 100));
+            shapes.Add(new Circle(Color.Purple, 10, 100, 100)); //create a red circle at (10,100) of radius 100
+            shapes.Add(new Circle(Color.Chartreuse, 100, 10, 50)); //apparently it's green
+            shapes.Add(new Circle(Color.Red, 10, 100, 100));
+            shapes.Add(new Rect(Color.Blue, 150, 150, 50, 100));
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -25,24 +25,16 @@ namespace InheritanceExample
             Graphics g = e.Graphics;
 
 
-            for (int i = 0; i < circles.Count; i++)
+            for (int i = 0; i < shapes.Count; i++)
             {
-                Circle c;
-                
-                c = (Circle) circles[i];
-                c.draw(g);
-                Console.WriteLine(c.ToString());
+                Shape s;
+
+                s = (Shape)shapes[i];
+                s.draw(g);
+                Console.WriteLine(s.ToString());
 
             }
-            for (int i = 0; i < rectangles.Count; i++)
-            {
-                Rect r;
-
-                r = (Rect) rectangles[i];
-                r.draw(g);
-                Console.WriteLine(r.ToString());
-
-            }
+           
         }
     }
 }
