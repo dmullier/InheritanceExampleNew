@@ -28,9 +28,17 @@ namespace ShapesInheritanceExample
             base.draw(g);
         }
 
+        public override float calcArea()
+        {
+            return (float) Math.PI * radius * radius;
+        }
         public override string ToString() //all classes inherit from object and ToString() is abstract in object
         {
             return base.ToString() + "  " + this.radius;
+        }
+
+        public void circleOnly()
+        {             Console.WriteLine("Circle only method");
         }
     }
 }
