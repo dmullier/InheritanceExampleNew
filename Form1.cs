@@ -8,13 +8,13 @@ namespace InheritanceExample
     {
 
         List<Shape> shapes = new List<Shape>();
-
+        Bitmap myBitmap;
 
 
         public Form1()
         {
             InitializeComponent();
-          
+            myBitmap = new Bitmap(this.ClientSize.Width, this.ClientSize.Height);
 
             //add a few shapes
 
@@ -52,23 +52,26 @@ namespace InheritanceExample
                 }
             }
 
-        }
-
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            Debug.WriteLine("paint called");
-            Graphics g = e.Graphics;
-
-
+            Graphics g = Graphics.FromImage(myBitmap);
             for (int i = 0; i < shapes.Count; i++)
             {
                 Shape s;
 
                 s = (Shape)shapes[i];
                 s.draw(g);
-                Debug.WriteLine(s.ToString()+" area is "+s.calcArea());
-               
+                Debug.WriteLine(s.ToString() + " area is " + s.calcArea());
+
             }
+
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Debug.WriteLine("paint called");
+            Graphics g = e.Graphics;
+            g.DrawImage(myBitmap, 0, 0);
+
+
         }
            
         
