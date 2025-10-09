@@ -28,7 +28,7 @@ namespace ShapesInheritanceExample
             base.draw(g);
         }
 
-        public override float calcArea()
+        public  override float calcArea()
         {
             return (float) Math.PI * radius * radius;
         }
