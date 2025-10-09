@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShapesInheritanceExample
 {
-    class Shape 
+    abstract class Shape 
     {
 
         protected Color colour; //shape's colour
@@ -33,10 +33,8 @@ namespace ShapesInheritanceExample
             g.DrawString(text, drawFont, drawBrush, this.x, this.y, drawFormat);
         }
 
-        public virtual float calcArea()
-        {
-            return 0; //a shape has no area
-        }
+        public abstract float calcArea();
+      
 
         public override string ToString() //get the standard object name and break hierarchy to get just the name
         {

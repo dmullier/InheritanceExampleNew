@@ -28,7 +28,7 @@ namespace ShapesInheritanceExample
             g.DrawRectangle(p, x, y, width, height);
             base.draw(g);
         }
-        public int CalcArea()
+        public override float calcArea()
         {
             return width * height;
         }

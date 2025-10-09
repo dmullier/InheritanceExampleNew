@@ -14,7 +14,8 @@ namespace InheritanceExample
         {
             this.size = size;
         }
-        /*public override void draw(Graphics g)
+
+        public override void draw(Graphics g)
         {
             Pen p = new Pen(Color.Black, 2);
             SolidBrush b = new SolidBrush(colour);
@@ -22,6 +23,10 @@ namespace InheritanceExample
             g.FillPolygon(b, points);
             g.DrawPolygon(p, points);
             base.draw(g);
-        }*/
+        }
+         public override float calcArea()
+          {
+              return (size * size)/2;
+          }
     }
 }
