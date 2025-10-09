@@ -7,15 +7,17 @@ namespace InheritanceExample
     public partial class Form1 : Form
     {
 
-        ArrayList  shapes = new ArrayList();
-        
+        List<Shape> shapes = new List<Shape>();
+
+
 
         public Form1()
         {
             InitializeComponent();
+          
 
             //add a few shapes
-            shapes.Add("hello");
+
             Random rand = new Random(77887);
             for (int i = 0; i < 150; i++)
             {
@@ -42,9 +44,9 @@ namespace InheritanceExample
                     case 2:
                         shapes.Add(new Rect(newColour, x, y, size, size / 2));
                         break;
-                        case 3: 
-                             shapes.Add(new Triangle(newColour, x, y, size));
-                             break;
+                    case 3: 
+                        shapes.Add(new Triangle(newColour, x, y, size));
+                        break;
 
 
                 }
@@ -65,13 +67,7 @@ namespace InheritanceExample
                 s = (Shape)shapes[i];
                 s.draw(g);
                 Debug.WriteLine(s.ToString()+" area is "+s.calcArea());
-                if (s is Circle)
-                {
-                   Circle c = (Circle) s;
-                    c.circleOnly();
-                    Debug.WriteLine($"Triangle area is {s.calcArea()}");
-                }
-             
+               
             }
         }
            
